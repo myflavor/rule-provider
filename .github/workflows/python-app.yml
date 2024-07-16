@@ -32,6 +32,8 @@ jobs:
         
     - name: Commit and push changes
       run: |
+        git config --global user.name "Action"
+        git config --global user.email "action@github.com"
         git add .
         git commit -m "Sync"
         git push
