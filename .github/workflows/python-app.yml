@@ -30,10 +30,5 @@ jobs:
       run: |
         python cloudflare.py
         
-    - name: Commit and push changes
-      run: |
-        git config --global user.name "Action"
-        git config --global user.email "action@github.com"
-        git add .
-        git commit -m "Sync"
-        git push
+    - name: action-push
+      uses: ludeeus/action-push@0.0.1
