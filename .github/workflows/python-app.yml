@@ -27,7 +27,7 @@ jobs:
     - name: Fetch Provider
       run: |
         python cloudflare.py
-        
+        date +%s > timestamp
     - name: Commit and push changes
       run: |
         git config --global user.name "Action"
