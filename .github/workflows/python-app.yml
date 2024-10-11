@@ -23,7 +23,6 @@ jobs:
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
     - name: Fetch Provider
       run: |
-        rm -rf *.txt
         python cloudflare.py
         wget -O reject.yml https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/reject.txt
         wget -O private.yml https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/private.txt
