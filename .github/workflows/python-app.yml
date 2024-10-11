@@ -23,13 +23,14 @@ jobs:
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
     - name: Fetch Provider
       run: |
+        rm -rf *.txt
         python cloudflare.py
-        wget -O reject.txt https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/reject.txt
-        wget -O private.txt https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/private.txt
-        wget -O gfw.txt https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/gfw.txt
-        wget -O tld-not-cn.txt https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/tld-not-cn.txt
-        wget -O telegramcidr.txt https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/telegramcidr.txt
-        wget -O applications.txt https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/applications.txt
+        wget -O reject.yml https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/reject.txt
+        wget -O private.yml https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/private.txt
+        wget -O gfw.yml https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/gfw.txt
+        wget -O tld-not-cn.yml https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/tld-not-cn.txt
+        wget -O telegramcidr.yml https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/telegramcidr.txt
+        wget -O applications.yml https://cdn.jsdelivr.net/gh/Loyalsoldier/clash-rules@release/applications.txt
         date +%s > timestamp
     - name: Commit and push changes
       run: |
